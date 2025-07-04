@@ -1,0 +1,14 @@
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: Dockerfile.ros2
+    container_name: ros2-dev
+    volumes:
+      - ./ros2-glaze-package:/root/ros2-glaze-package
+    working_dir: /root/ros2-glaze-package
+    stdin_open: true
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=0
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp

@@ -1,0 +1,15 @@
+FROM --platform=linux/arm64 osrf/ros:jazzy-desktop
+
+# Install pip, colcon, build tools and update all packages to reduce vulnerabilities
+RUN apt update && apt upgrade -y && apt install -y \
+    python3-pip python3-colcon-common-extensions \
+    && pip3 install -U pip setuptools --break-system-packages
+
+
+# Optional: install your PyPI package
+# RUN pip3 install your-package
+
+# Source ROS setup by default
+COPY ros_entrypoint.sh /ros_entrypoint.sh
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]

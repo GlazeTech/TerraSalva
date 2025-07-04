@@ -1,0 +1,41 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"indentWidth": 2
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"correctness": {
+				"noUndeclaredDependencies": "off",
+				"useImportExtensions": "off"
+			},
+			"style": {
+				"useNamingConvention": "off",
+				"useFilenamingConvention": "off",
+				"noImplicitBoolean": "off",
+				"noParameterProperties": "off"
+			}
+		}
+	},
+	"files": {
+		"ignore": [
+			"node_modules",
+			"dist",
+			"coverage",
+			"build",
+			"vite.config.ts",
+			"vite.config.js",
+			"tsconfig.json",
+			"tsconfig.node.json",
+			"tsconfig.paths.json",
+			"package.json",
+			"package-lock.json",
+			"biome.json"
+		]
+	}
+}
